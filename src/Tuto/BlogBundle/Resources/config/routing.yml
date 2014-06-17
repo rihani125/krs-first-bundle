@@ -1,0 +1,38 @@
+blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BlogBundle:Default:index }
+
+blog_test:
+    pattern:  /test
+    defaults: { _controller: BlogBundle:Test:index }
+
+blog_home :
+    pattern : /blog-page
+    defaults: { _controller: BlogBundle:Public:index }
+
+blog_article :
+    pattern: /article/{_local}/{annee}/{slog}.{_format}
+    defaults: { _controller: BlogBundle:Public:article, _format: html, _local: fr  }
+    requirements:
+        annee: \d{4}
+        _format: rss|html	
+        _local: fr|en
+
+blog_add_article :
+    pattern : /blog/add/article
+    defaults: { _controller: BlogBundle:Public:add }
+
+blog_edit_article :
+    pattern : /blog/edit/article/{id}
+    defaults: { _controller: BlogBundle:Public:edit }
+    requirements:
+        id: \d{4}
+
+blog_delete_article :
+    pattern : /blog/delete/article/{id}
+    defaults: { _controller: BlogBundle:Public:delete }
+    requirements:
+        id: \d{4}
+
+
+

@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+{% block title %}Liste article|{{ parent() }}{% endblock %}
+{% block body %}
+{% for article in articles %}
+	<article>
+		<header>
+		 <h1>{{article.titre}}</h1>
+		 <p>
+		   Rédigé par : {{article.auteur.username}} <br>
+		   le {{article.date|date('d/m/y')}}
+		 </p>
+
+		</header>
+		<p>
+			{{article.contenu|raw}}
+		</p>
+
+	</article>      
+{% endfor %}
+{% endblock %}
