@@ -26,13 +26,13 @@ blog_edit_article :
     pattern : /blog/edit/article/{id}
     defaults: { _controller: BlogBundle:Public:edit }
     requirements:
-        id: \d{4}
+        id: \d+
 
-blog_delete_article :
-    pattern : /blog/delete/article/{id}
-    defaults: { _controller: BlogBundle:Public:delete }
+blog_voir_article :
+    pattern : /blog/voir/article/{id}
+    defaults: { _controller: BlogBundle:Public:voir }
     requirements:
-        id: \d{4}
+        id: \d+
 
 
 

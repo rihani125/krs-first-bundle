@@ -1,1 +1,17 @@
-<h1>Add article :</h1>
+{% extends "::base.html.twig" %}
+
+{% block title %}Add Article|{{ parent() }}{% endblock %}
+
+{% block body %}
+
+  <h1> Ajout d'un article : </h1>
+
+   <form action="{{path('blog_add_article')}}" method="POST">
+
+		{{form_widget(form)}}
+
+        <input type="submit">
+   </form>
+
+
+{% endblock %}
